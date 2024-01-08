@@ -7,6 +7,6 @@ class DarcyPressure : public ADKernelGrad
 		DarcyPressure(const InputParameters & parameters);
 	protected:
 		virtual ADRealVectorValue precomputeQpResidual() override;
-		const Real _permeability;
-		const Real _viscosity;
+		const Real & _permeability;
+		const Real & _viscosity;
 };
