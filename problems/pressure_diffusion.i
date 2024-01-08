@@ -17,10 +17,10 @@
   [../]
 []
 [Kernels]
-  [./diffusion]
-    type = ADDiffusion # Laplacian operator
+  [diffusion]
+    type = DarcyPressure # Laplacian operator
     variable = pressure # Operate on the "pressure" variable from above
-  [../]
+  []
 []
 [BCs]
   [./inlet]
