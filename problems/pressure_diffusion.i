@@ -1,8 +1,8 @@
 [Mesh]
   type = GeneratedMesh # Can generate simple lines, rectangles and rectangular prisms
   dim = 2 # Dimension of the mesh
-  nx = 1000 # Number of elements in the x direction
-  ny = 100 # Number of elements in the y direction
+  nx = 4000 # Number of elements in the x direction
+  ny = 400 # Number of elements in the y direction
   xmax = 0.304 # Length of test chamber
   ymax = 0.0257 # Test chamber radius
 []
@@ -20,8 +20,13 @@
   [diffusion]
     type = DarcyPressure # Laplacian operator
     variable = pressure # Operate on the "pressure" variable from above
-    permeability = 0.8451e-09
+    #permeability = 0.8451e-09
   []
+[]
+[Materials]
+   [filter]
+      type = PackedColumn
+   []
 []
 [BCs]
   [./inlet]
@@ -47,5 +52,6 @@
 []
 [Outputs]
   exodus = true # Output Exodus format
+  perf_graph = true
 []
 
